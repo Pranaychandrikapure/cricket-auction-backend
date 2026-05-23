@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: realtime-auction-backend
+    env: docker
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8080
+      # Expose Spring Boot datasource configuration as editable environment variables
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://ep-polished-boat-a4xdns3a-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - key: SPRING_DATASOURCE_USERNAME
+        value: neondb_owner
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: npg_z6FkEHIB7seD
